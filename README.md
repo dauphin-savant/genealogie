@@ -1,2 +1,2 @@
-# G-n-alogie
+# Genealogie
 pour faire des cartes de généalogie
