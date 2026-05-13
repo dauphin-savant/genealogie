@@ -1,7 +1,7 @@
 // On crée une variable globale accessible par l'autre script
 var mesAncetres = [
     {
-        nom: "Jean Durand",
+        nom: "Jean Durandton",
         date: "1820-1890",
         lieu: "Limoges",
         coords: [45.8336, 1.2611],
