@@ -1,3 +1,16 @@
+body {
+    margin: 0;             /* Supprime les marges blanches par défaut sur les côtés */
+    padding: 0;            /* Supprime l'espace intérieur */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Une police plus moderne */
+    background-color: #f4f4f4; /* Un gris très léger pour faire ressortir la carte */
+    color: #333;           /* Une couleur de texte sombre mais pas noir pur (plus lisible) */
+}
+#map {
+    height: 600px;  /* Hauteur de la carte */
+    width: 100%;    /* Largeur de la carte */
+    border: 2px solid #ccc; /* Optionnel : ajoute une bordure */
+    border-radius: 8px;     /* Optionnel : arrondit les coins */
+}
 .info-legend {
     padding: 10px;
     background: white;
