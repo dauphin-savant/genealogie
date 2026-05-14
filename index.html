@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+	<link rel="stylesheet" href="Macarte.css" />
+	
     <style>
         #map { height: 600px; width: 100%; border: 1px solid #ccc; }
         body { font-family: sans-serif; margin: 20px; }
@@ -18,7 +20,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>    
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 	
-    <script src="Macarte02_Data.js"></script>
+    <script src="Macarte_Data.js"></script>
 
     <!--
      <script>
@@ -42,6 +44,26 @@
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
+		// 1. Création de l'objet de contrôle
+		var legend = L.control({ position: 'bottomright' }); // Position : 'topright', 'bottomright', etc.
+
+		legend.onAdd = function (map) {
+			// Création d'une div avec la classe CSS définie plus haut
+			var div = L.DomUtil.create('div', 'info-legend');
+			
+			// Contenu de votre libellé (HTML autorisé)
+			div.innerHTML = `
+				<h4>Propriétés</h4>
+				<b>Généalogie :</b> Famille Durand<br>
+				<b>Période :</b> 1750 - 1920<br>
+				<small>Cliquer sur un groupe pour voir les détails.</small>
+			`;
+			
+			return div;
+		};
+		legend.addTo(map);
+
+
         // Création du groupe de clusters
         var clusters = L.markerClusterGroup();
 
@@ -58,9 +80,10 @@
             
             clusters.addLayer(marker);
         });
-
-        // Ajouter tout le groupe à la carte
         map.addLayer(clusters);
+		
+		
+		
     </script>
 </body>
 </html>
